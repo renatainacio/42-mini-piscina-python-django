@@ -1,0 +1,27 @@
+{% extends "ex03/base.html" %}
+{% block style %}
+<style>
+    td{ 
+        width:80px; height: 40px
+    }
+</style>
+{% endblock style %}
+{% block content %}
+<table>
+    <tr>
+        <th style="color: black">noir</th>
+        <th style="color: red">rouge</th>
+        <th style="color: blue">bleu</th>
+        <th style="color: green">vert</th>
+    </tr>
+    {% for i in list %}
+    <tr>
+        <td style="background-color: rgb({{i}}, {{i}}, {{i}})"></td>
+        <td style="background-color: rgb(255, {{i}}, {{i}})"></td>
+        <td style="background-color: rgb({{i}}, {{i}}, 255)"></td>
+        <td style="background-color: rgb({{i}}, 255, {{i}})"></td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock content %}
